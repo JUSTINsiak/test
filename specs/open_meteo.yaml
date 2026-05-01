@@ -157,8 +157,8 @@ paths:
                 properties:
                   latitude:
                     type: number
-                    example: 41.52
-                    description: WGS84 of the center of the weather grid-cell which was used to generate this forecast. This coordinate might be up to 5 km away.
+                    example: 42.59
+                    description: XXXXXXXXXXXX the weather grid-cell which was used to generate this forecast. This coordinate might be up to 5 km away.
                   longitude:
                     type: number
                     example: 13.419.52
