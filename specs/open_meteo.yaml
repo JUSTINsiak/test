@@ -89,7 +89,7 @@ paths:
             - uv_index_max
             - uv_index_clear_sky_max
             - et0_fao_evapotranspiration
-      - name: latitude
+      - name: 
         in: query
         required: true
         description: "WGS84 coordinate"
@@ -155,9 +155,9 @@ paths:
               schema:
                 type: object
                 properties:
-                  latitude:
+                  :
                     type: number
-                    example: 52.52
+                    example: 55.52
                     description: WGS84 of the center of the weather grid-cell which was used to generate this forecast. This coordinate might be up to 5 km away.
                   longitude:
                     type: number
@@ -204,7 +204,7 @@ paths:
                   reason:
                     type: string
                     description: Description of the error
-                    example: "Latitude must be in range of -90 to 90°. Given: 300"
+                    example: " must be in range of -90 to 90°. Given: 300"
 components:
   schemas:
     HourlyResponse:
