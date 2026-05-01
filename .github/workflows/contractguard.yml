@@ -10,15 +10,16 @@ on:
 jobs:
   contractguard:
     uses: kingdoubles2/FYP/.github/workflows/spec-pipeline-reusable.yml@main
-  with:
-    specs_path: specs
-    runtime_mapping_path: config/runtime_mapping.json
-    suite_timeout_seconds: 12
-    comment_on_pr: true
-    engine_repository: kingdoubles2/FYP
-    engine_ref: main
+    with:
+      specs_path: specs
+      runtime_mapping_path: config/runtime_mapping.json
+      suite_timeout_seconds: 12
+      comment_on_pr: true
+      engine_repository: kingdoubles2/FYP
+      engine_ref: main
     secrets:
       CONTRACTGUARD_BEARER_TOKEN: ${{ secrets.CONTRACTGUARD_BEARER_TOKEN }}
       CONTRACTGUARD_API_KEY: ${{ secrets.CONTRACTGUARD_API_KEY }}
       CONTRACTGUARD_API_KEY_HEADER: ${{ secrets.CONTRACTGUARD_API_KEY_HEADER }}
       CONTRACTGUARD_AUTH_BY_BASE_URL_JSON: ${{ secrets.CONTRACTGUARD_AUTH_BY_BASE_URL_JSON }}
+
