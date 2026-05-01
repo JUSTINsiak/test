@@ -3,23 +3,43 @@ name: ContractGuard API CI
 on:
   pull_request:
     paths:
-      - "specs/**"
-      - "config/**"
-  workflow_dispatch:
+      
+"specs/"
+    
+"config/
+"
+".github/workflows/contractguard.yml"
+workflow_dispatch:
 
 jobs:
   contractguard:
     uses: kingdoubles2/FYP/.github/workflows/spec-pipeline-reusable.yml@main
     with:
+      # Folder in the developer's repo that contains OpenAPI / Swagger specs
       specs_path: specs
+
+      # Runtime parameter mapping file in the developer's repo
       runtime_mapping_path: config/runtime_mapping.json
+
+      # Python version used by the CI runner
+      python_version: "3.11"
+
+      # Timeout per HTTP request during test execution
       suite_timeout_seconds: 12
+
+      # Set true if they want the workflow to stay green even when API tests fail
+      allow_suite_failure: false
+
+      # Post a summary comment on PRs when failures are found
       comment_on_pr: true
+
+      # Important: this must be the repo that contains the ContractGuard engine code
       engine_repository: kingdoubles2/FYP
       engine_ref: main
+
     secrets:
       CONTRACTGUARD_BEARER_TOKEN: ${{ secrets.CONTRACTGUARD_BEARER_TOKEN }}
       CONTRACTGUARD_API_KEY: ${{ secrets.CONTRACTGUARD_API_KEY }}
       CONTRACTGUARD_API_KEY_HEADER: ${{ secrets.CONTRACTGUARD_API_KEY_HEADER }}
       CONTRACTGUARD_AUTH_BY_BASE_URL_JSON: ${{ secrets.CONTRACTGUARD_AUTH_BY_BASE_URL_JSON }}
-
+      CONTRACTGUARD_RUNTIME_MAPPING_JSON: ${{ secrets.CONTRACTGUARD_RUNTIME_MAPPING_JSON }}
