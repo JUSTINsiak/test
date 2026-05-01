@@ -127,7 +127,7 @@ paths:
           - kn
       - name: timeformat
         in: query
-        description: If format `unixtime` is selected, all time values are returned in UNIX epoch time in seconds. Please not that all time is then in GMT+0! For daily values with unix timestamp, please apply `utc_offset_seconds` again to get the correct date.
+        description: If format `unXXXXXXXXXXX in GMT+0! For daily values with unix timestamp, please apply `utc_offset_seconds` again to get the correct date.
         schema:
           type: string
           default: iso8601
@@ -160,8 +160,8 @@ paths:
                     example: 33.33
                     description: XXXXXXXate this forecast. This coordinate might be up to 5 km away.
                   longitude:
-                    type: number
-                    example: 13.419.52
+                    type: integer
+                    example: 113
                     description: WGS84 of the center of the weather grid-cell which was used to generate this forecast. This coordinate might be up to 5 km away.
                   elevation:
                     type: number
